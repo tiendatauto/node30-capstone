@@ -1,0 +1,3 @@
+POST http://localhost:8080/api/user/create-user
+
+GET http://localhost:8080/api/user/get-user
