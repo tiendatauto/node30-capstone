@@ -1,86 +1,31 @@
-const DataTypes = require('sequelize').DataTypes;
-const _food = require('./food');
-const _food_type = require('./food_type');
-const _like_res = require('./like_res');
-const _order = require('./order');
-const _rate_res = require('./rate_res');
-const _restaurant = require('./restaurant');
-const _sub_food = require('./sub_food');
-const _user = require('./user');
+const DataTypes = require("sequelize").DataTypes;
+const _binh_luan = require("./binh_luan");
+const _hinh_anh = require("./hinh_anh");
+const _luu_anh = require("./luu_anh");
+const _nguoi_dung = require("./nguoi_dung");
 
 function initModels(sequelize) {
-  const food = _food(sequelize, DataTypes);
-  const food_type = _food_type(sequelize, DataTypes);
-  const like_res = _like_res(sequelize, DataTypes);
-  const order = _order(sequelize, DataTypes);
-  const rate_res = _rate_res(sequelize, DataTypes);
-  const restaurant = _restaurant(sequelize, DataTypes);
-  const sub_food = _sub_food(sequelize, DataTypes);
-  const user = _user(sequelize, DataTypes);
+  const binh_luan = _binh_luan(sequelize, DataTypes);
+  const hinh_anh = _hinh_anh(sequelize, DataTypes);
+  const luu_anh = _luu_anh(sequelize, DataTypes);
+  const nguoi_dung = _nguoi_dung(sequelize, DataTypes);
 
-  food.belongsToMany(user, {
-    as: 'lst_user_order', //user_id_user_orders (đã đổi tên)
-    through: order,
-    foreignKey: 'food_id',
-    otherKey: 'user_id',
-  });
-  restaurant.belongsToMany(user, {
-    as: 'user_id_users',
-    through: like_res,
-    foreignKey: 'res_id',
-    otherKey: 'user_id',
-  });
-  restaurant.belongsToMany(user, {
-    as: 'user_id_user_rate_res',
-    through: rate_res,
-    foreignKey: 'res_id',
-    otherKey: 'user_id',
-  });
-  user.belongsToMany(food, {
-    as: 'food_id_foods',
-    through: order,
-    foreignKey: 'user_id',
-    otherKey: 'food_id',
-  });
-  user.belongsToMany(restaurant, {
-    as: 'res_id_restaurants',
-    through: like_res,
-    foreignKey: 'user_id',
-    otherKey: 'res_id',
-  });
-  user.belongsToMany(restaurant, {
-    as: 'res_id_restaurant_rate_res',
-    through: rate_res,
-    foreignKey: 'user_id',
-    otherKey: 'res_id',
-  });
-
-  order.belongsTo(food, { as: 'food', foreignKey: 'food_id' });
-  food.hasMany(order, { as: 'orders', foreignKey: 'food_id' });
-  sub_food.belongsTo(food, { as: 'food', foreignKey: 'food_id' });
-  food.hasMany(sub_food, { as: 'sub_foods', foreignKey: 'food_id' });
-  food.belongsTo(food_type, { as: 'type', foreignKey: 'type_id' });
-  food_type.hasMany(food, { as: 'foods', foreignKey: 'type_id' });
-  like_res.belongsTo(restaurant, { as: 're', foreignKey: 'res_id' });
-  restaurant.hasMany(like_res, { as: 'like_res', foreignKey: 'res_id' });
-  rate_res.belongsTo(restaurant, { as: 're', foreignKey: 'res_id' });
-  restaurant.hasMany(rate_res, { as: 'rate_res', foreignKey: 'res_id' });
-  like_res.belongsTo(user, { as: 'user', foreignKey: 'user_id' });
-  user.hasMany(like_res, { as: 'like_res', foreignKey: 'user_id' });
-  order.belongsTo(user, { as: 'user', foreignKey: 'user_id' });
-  user.hasMany(order, { as: 'orders', foreignKey: 'user_id' });
-  rate_res.belongsTo(user, { as: 'user', foreignKey: 'user_id' });
-  user.hasMany(rate_res, { as: 'rate_res', foreignKey: 'user_id' });
+  binh_luan.belongsTo(hinh_anh, { as: "hinh", foreignKey: "hinh_id"});
+  hinh_anh.hasMany(binh_luan, { as: "binh_luans", foreignKey: "hinh_id"});
+  luu_anh.belongsTo(hinh_anh, { as: "hinh", foreignKey: "hinh_id"});
+  hinh_anh.hasMany(luu_anh, { as: "luu_anhs", foreignKey: "hinh_id"});
+  binh_luan.belongsTo(nguoi_dung, { as: "nguoi_dung", foreignKey: "nguoi_dung_id"});
+  nguoi_dung.hasMany(binh_luan, { as: "binh_luans", foreignKey: "nguoi_dung_id"});
+  hinh_anh.belongsTo(nguoi_dung, { as: "nguoi_dung", foreignKey: "nguoi_dung_id"});
+  nguoi_dung.hasMany(hinh_anh, { as: "hinh_anhs", foreignKey: "nguoi_dung_id"});
+  luu_anh.belongsTo(nguoi_dung, { as: "nguoi_dung", foreignKey: "nguoi_dung_id"});
+  nguoi_dung.hasMany(luu_anh, { as: "luu_anhs", foreignKey: "nguoi_dung_id"});
 
   return {
-    food,
-    food_type,
-    like_res,
-    order,
-    rate_res,
-    restaurant,
-    sub_food,
-    user,
+    binh_luan,
+    hinh_anh,
+    luu_anh,
+    nguoi_dung,
   };
 }
 module.exports = initModels;

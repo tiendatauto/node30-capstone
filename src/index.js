@@ -4,7 +4,7 @@ const app = express();
 // middleware
 // chuyển dữ liệu sang dạng json để req.body có thể hiểu
 app.use(express.json());
-
+app.use(express.static('.')); //định vị lại đường dẫn để load tài nguyên từ back end
 const cors = require('cors');
 app.use(cors());
 

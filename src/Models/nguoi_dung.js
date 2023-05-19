@@ -1,32 +1,40 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return restaurant.init(sequelize, DataTypes);
+  return nguoi_dung.init(sequelize, DataTypes);
 }
 
-class restaurant extends Sequelize.Model {
+class nguoi_dung extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   return super.init({
-    res_id: {
+    nguoi_dung_id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    res_name: {
+    email: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    image: {
+    mat_khau: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    desc: {
+    ho_ten: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
+    tuoi: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    anh_dai_dien: {
       type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'restaurant',
+    tableName: 'nguoi_dung',
     timestamps: false,
     indexes: [
       {
@@ -34,7 +42,7 @@ class restaurant extends Sequelize.Model {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "res_id" },
+          { name: "nguoi_dung_id" },
         ]
       },
     ]

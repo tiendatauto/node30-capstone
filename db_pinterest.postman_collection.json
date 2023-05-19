@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "117fbf13-f6d6-432e-8dc1-90338f72d3bb",
+		"name": "db_pinterest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23175667"
+	},
+	"item": [
+		{
+			"name": "GET USER (get thông tin user)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMywiZnVsbF9uYW1lIjoixJDhuqF0IFRp4bq_biIsImVtYWlsIjoidGllbmRhdEBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkSUl3SFVrM0ovVGlTZXRWQko3cW5sZUpvTG5YZ0FvZHViV0ZKby8veW9Va296UFhzYkw5Q08iLCJpYXQiOjE2ODIyNDcyNjcsImV4cCI6MTY4MjI0NzU2N30.ZqzGXLecEVGJgxXD9tVM7VnriS3pChup2Umk301EpqA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\":\"Đạt Tiến\",\r\n    \"email\" :\"ddd@gmail.com\",\r\n    \"pass_word\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/get-user/",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET IMAGE (get ds ảnh)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjoxNCwiZW1haWwiOiJ0aWVuZGF0QGdtYWlsLmNvbSIsIm1hdF9raGF1IjoiJDJiJDEwJE1CYTlUVGh2Z2k0dDcuTUd3WnBQVnVGWjIuSmtUUm40MGoxTzRCdUdSM0R0cHJ1Zi43NldDIiwiaG9fdGVuIjoixJDhuqF0IFRp4bq_biIsInR1b2kiOjI1LCJhbmhfZGFpX2RpZW4iOm51bGwsImlhdCI6MTY4NDUxMTIyMiwiZXhwIjoxNjg0NTI5MjIyfQ.23yKn8PPOfybyvzwixrFGX2xYO0zrZJu8QqHVUhKBmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\":\"Đạt Tiến\",\r\n    \"email\" :\"ddd@gmail.com\",\r\n    \"pass_word\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/get-image/",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-image",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET IMAGE QUERY (tìm ảnh theo tên)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjoxNCwiZW1haWwiOiJ0aWVuZGF0QGdtYWlsLmNvbSIsIm1hdF9raGF1IjoiJDJiJDEwJE1CYTlUVGh2Z2k0dDcuTUd3WnBQVnVGWjIuSmtUUm40MGoxTzRCdUdSM0R0cHJ1Zi43NldDIiwiaG9fdGVuIjoixJDhuqF0IFRp4bq_biIsInR1b2kiOjI1LCJhbmhfZGFpX2RpZW4iOm51bGwsImlhdCI6MTY4NDUxMTIyMiwiZXhwIjoxNjg0NTI5MjIyfQ.23yKn8PPOfybyvzwixrFGX2xYO0zrZJu8QqHVUhKBmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\":\"Đạt Tiến\",\r\n    \"email\" :\"ddd@gmail.com\",\r\n    \"pass_word\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/get-image/search?name=k",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-image",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "k"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET IMAGE USER (get ảnh và ng tạo bằng id ảnh)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjoxNCwiZW1haWwiOiJ0aWVuZGF0QGdtYWlsLmNvbSIsIm1hdF9raGF1IjoiJDJiJDEwJE1CYTlUVGh2Z2k0dDcuTUd3WnBQVnVGWjIuSmtUUm40MGoxTzRCdUdSM0R0cHJ1Zi43NldDIiwiaG9fdGVuIjoixJDhuqF0IFRp4bq_biIsInR1b2kiOjI1LCJhbmhfZGFpX2RpZW4iOm51bGwsImlhdCI6MTY4NDUxMTIyMiwiZXhwIjoxNjg0NTI5MjIyfQ.23yKn8PPOfybyvzwixrFGX2xYO0zrZJu8QqHVUhKBmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\":\"Đạt Tiến\",\r\n    \"email\" :\"ddd@gmail.com\",\r\n    \"pass_word\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/get-image-user",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-image-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER SAVE IMAGE (get ảnh đã lưu theo userid)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjoxNCwiZW1haWwiOiJ0aWVuZGF0QGdtYWlsLmNvbSIsIm1hdF9raGF1IjoiJDJiJDEwJE1CYTlUVGh2Z2k0dDcuTUd3WnBQVnVGWjIuSmtUUm40MGoxTzRCdUdSM0R0cHJ1Zi43NldDIiwiaG9fdGVuIjoixJDhuqF0IFRp4bq_biIsInR1b2kiOjI1LCJhbmhfZGFpX2RpZW4iOm51bGwsImlhdCI6MTY4NDUxMTIyMiwiZXhwIjoxNjg0NTI5MjIyfQ.23yKn8PPOfybyvzwixrFGX2xYO0zrZJu8QqHVUhKBmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\":\"Đạt Tiến\",\r\n    \"email\" :\"ddd@gmail.com\",\r\n    \"pass_word\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/get-user-saveimage",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-user-saveimage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER IMAGE (ds ảnh đã tạo theo id user)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjoxNCwiZW1haWwiOiJ0aWVuZGF0QGdtYWlsLmNvbSIsIm1hdF9raGF1IjoiJDJiJDEwJE1CYTlUVGh2Z2k0dDcuTUd3WnBQVnVGWjIuSmtUUm40MGoxTzRCdUdSM0R0cHJ1Zi43NldDIiwiaG9fdGVuIjoixJDhuqF0IFRp4bq_biIsInR1b2kiOjI1LCJhbmhfZGFpX2RpZW4iOm51bGwsImlhdCI6MTY4NDUxMTIyMiwiZXhwIjoxNjg0NTI5MjIyfQ.23yKn8PPOfybyvzwixrFGX2xYO0zrZJu8QqHVUhKBmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\":\"Đạt Tiến\",\r\n    \"email\" :\"ddd@gmail.com\",\r\n    \"pass_word\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/get-user-image",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-user-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET COMMENT IMAGE (get thông tin bình luận theo id ảnh)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjoxNCwiZW1haWwiOiJ0aWVuZGF0QGdtYWlsLmNvbSIsIm1hdF9raGF1IjoiJDJiJDEwJE1CYTlUVGh2Z2k0dDcuTUd3WnBQVnVGWjIuSmtUUm40MGoxTzRCdUdSM0R0cHJ1Zi43NldDIiwiaG9fdGVuIjoixJDhuqF0IFRp4bq_biIsInR1b2kiOjI1LCJhbmhfZGFpX2RpZW4iOm51bGwsImlhdCI6MTY4NDUxMTIyMiwiZXhwIjoxNjg0NTI5MjIyfQ.23yKn8PPOfybyvzwixrFGX2xYO0zrZJu8QqHVUhKBmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\":\"Đạt Tiến\",\r\n    \"email\" :\"ddd@gmail.com\",\r\n    \"pass_word\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/get-comment-image",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-comment-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET SAVE IMAGE ( kiểm tra hình đã lưu chưa theo id ảnh)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjoxNCwiZW1haWwiOiJ0aWVuZGF0QGdtYWlsLmNvbSIsIm1hdF9raGF1IjoiJDJiJDEwJE1CYTlUVGh2Z2k0dDcuTUd3WnBQVnVGWjIuSmtUUm40MGoxTzRCdUdSM0R0cHJ1Zi43NldDIiwiaG9fdGVuIjoixJDhuqF0IFRp4bq_biIsInR1b2kiOjI1LCJhbmhfZGFpX2RpZW4iOm51bGwsImlhdCI6MTY4NDUxMTIyMiwiZXhwIjoxNjg0NTI5MjIyfQ.23yKn8PPOfybyvzwixrFGX2xYO0zrZJu8QqHVUhKBmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nguoi_dung_id\" :5,\r\n  \"hinh_id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/get-save-image",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-save-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE COMMENT IMG ( bình luận ảnh)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjoxNCwiZW1haWwiOiJ0aWVuZGF0QGdtYWlsLmNvbSIsIm1hdF9raGF1IjoiJDJiJDEwJE1CYTlUVGh2Z2k0dDcuTUd3WnBQVnVGWjIuSmtUUm40MGoxTzRCdUdSM0R0cHJ1Zi43NldDIiwiaG9fdGVuIjoixJDhuqF0IFRp4bq_biIsInR1b2kiOjI1LCJhbmhfZGFpX2RpZW4iOm51bGwsImlhdCI6MTY4NDUxMTIyMiwiZXhwIjoxNjg0NTI5MjIyfQ.23yKn8PPOfybyvzwixrFGX2xYO0zrZJu8QqHVUhKBmQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nguoi_dung_id\" :\"5\",\r\n  \"hinh_id\":\"1\",\r\n  \"noi_dung\":\"bình luận test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/create-comment-image",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"create-comment-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SIGN UP",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" :\"tiendat@gmail.com\",\r\n    \"mat_khau\": \"1234\",\r\n    \"ho_ten\":\"Đạt Tiến\",\r\n    \"tuoi\":\"25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/sign-up",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SIGN IN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" :\"tiendat@gmail.com\",\r\n    \"mat_khau\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/login",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPLOAD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/tiend/Desktop/Homepage Design (Copy) (2).png"
+						},
+						{
+							"key": "ten_hinh",
+							"value": "Homepage",
+							"type": "text"
+						},
+						{
+							"key": "mo_ta",
+							"value": "abc",
+							"type": "text"
+						},
+						{
+							"key": "nguoi_dung_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/user/upload",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Image By User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/tiend/Desktop/Homepage Design (Copy) (2).png"
+						},
+						{
+							"key": "ten_hinh",
+							"value": "Homepage",
+							"type": "text"
+						},
+						{
+							"key": "mo_ta",
+							"value": "abc",
+							"type": "text"
+						},
+						{
+							"key": "nguoi_dung_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/user/deleteimage-byuser/7/1",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"deleteimage-byuser",
+						"7",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
